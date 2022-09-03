@@ -45,11 +45,11 @@ const newsFeedShow =datas=>{
                     <div class="flex justify-between">
                         <img class="w-10 mr-4 rounded-full " src="${data.author.img}" alt="">
                         <div class="text-left">
-                            <h5 class="font-semibold">${data.author.name? data.author.name:"not pound"}</h5>
-                            <p>${data.author?data.author.published_date:"not pound"}</p>
+                            <h5 class="font-semibold">${data.author.name? data.author.name:"no data pound"}</h5>
+                            <p>${data.author?data.author.published_date:"no data pound"}</p>
                         </div>
                     </div>
-                    <div class="col-span-3 ">${data.total_view?data.total_view:'not '}</div>
+                    <div class="col-span-3 ">${data.total_view?data.total_view:'no data pound '}</div>
                     <div class="col-span-3">c</div>
                     <div class="col-span-3 mr-4">
                         <label onclick="modal('${data._id}')" for="my-modal" class="btn modal-button">click</label>
@@ -72,7 +72,7 @@ const modalData=datas=>{
     const modalOpen =document.getElementById('modal-open')
     modalOpen.innerHTML=`
     <img class="h-60 w-full rounded-lg" src="${datas.author.img}" alt="">
-    <h3 class="font-bold text-2xl mt-3">Name: ${datas.author.name}</h3>
+    <h3 class="font-bold text-2xl mt-3">Name: ${datas.author.name? datas.author.name:'no data pound'}</h3>
     <p class="py-1 font-semibold"> published date: ${datas.author.published_date}</p>
     <p class="py-1 font-semibold"> published date: ${datas.rating.badge}</p>
     <p class="py-1 font-semibold"> published date: ${datas.rating.number}</p>
