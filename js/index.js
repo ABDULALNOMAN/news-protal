@@ -23,6 +23,9 @@ const newsFeed =users=>{
     .then(data=>newsFeedShow(data.data))
 }
 const newsFeedShow =datas=>{
+    const length = datas.length
+    const lengthItem = document.getElementById('length-item')
+    lengthItem.innerText = length
     const newsSection =document.getElementById('news')
     newsSection.textContent = ''
     datas.forEach(data=>{
@@ -49,7 +52,7 @@ const newsFeedShow =datas=>{
                     <div class="col-span-3 ">${data.total_view?data.total_view:'not '}</div>
                     <div class="col-span-3">c</div>
                     <div class="col-span-3 mr-4">
-                        <button class="btn btn-primary">click</button>
+                        <label onclick="modal('${data._id}')" for="my-modal" class="btn modal-button">click</label>
                     </div>
                 </div>
             </div>
@@ -58,5 +61,24 @@ const newsFeedShow =datas=>{
         newsSection.appendChild(div)
     })
 }
-// const modal = ()
+const modal = users=>{
+    fetch(` https://openapi.programming-hero.com/api/news/${users}`)
+    .then(res=>res.json())
+    .then(data=>modalData(data.data[0]))
+    .catch(error=>console.log(error))
+}
+const modalData=datas=>{
+    console.log(datas)
+    const modalOpen =document.getElementById('modal-open')
+    modalOpen.innerHTML=`
+    <img class="h-60 w-full rounded-lg" src="${datas.author.img}" alt="">
+    <h3 class="font-bold text-2xl mt-3">Name: ${datas.author.name}</h3>
+    <p class="py-1 font-semibold"> published date: ${datas.author.published_date}</p>
+    <p class="py-1 font-semibold"> published date: ${datas.rating.badge}</p>
+    <p class="py-1 font-semibold"> published date: ${datas.rating.number}</p>
+    <div class="modal-action">
+    <label for="my-modal" class="btn">close</label>
+    </div>
+    `
+} 
 newsFeedItem()
