@@ -5,13 +5,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News portal</title>
-</head>
-<body>
-    
-
-
-    <!-- tailwind link -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.24.0/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 text-black container mx-auto">
+    <nav class="bg-slate-100">
+        <div class="navbar">
+            <div class="flex-1">
+              <a class="btn btn-ghost normal-case text-3xl font-bold text-blue-800">magazine</a>
+            </div>
+            <div class="flex-none gap-2">
+                <ul class="p-2  flex">
+                    <li class="mr-4"><a>news</a></li>
+                    <li><a>blog</a></li>
+                </ul>
+              <div class="dropdown dropdown-end">
+                <label tabindex="0" class="btn btn-ghost btn-circle avatar">
+                  <div class="w-10 rounded-full">
+                    <img src="https://placeimg.com/80/80/people" />
+                  </div>
+                </label>
+              </div>
+            </div>
+        </div>
+    </nav>
+    <img src="" alt="">
+    <header>
+        <!-- all news heading show -->
+        <section id="news-item" class="flex justify-evenly items-center my-3 ">
+        </section>
+
+        <!-- news quantities show -->
+        <section></section>
+        <!-- <section>
+            <div>
+                <h5>Sort By View:</h5>
+                <select name="cars" id="">
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="opel">Opel</option>
+                    <option value="audi">Audi</option>
+                </select>
+            </div>
+            <div></div>
+        </section> -->
+    </header>
+    <main>
+        <section id="news" class="">
+              
+        </section>
+    </main>
+    <!-- booststrap cdn link-->
     <!-- js link -->
     <script src="./js/index.js"></script>
 </body>
