@@ -38,14 +38,14 @@ const newsFeedShow =datas=>{
         console.log(data)
         const div =document.createElement('div')
         div.innerHTML=`
-        <div class="grid md:grid-cols-12 grid-cols-1 h-full mb-6 border md:p-0 sm:p-10 bg-slate-100">
+        <div class="grid md:grid-cols-12 grid-cols-1 mb-6 border md:p-0 sm:p-10 h-full bg-slate-100">
             <div class="col-span-4 m-3">
                 <img class="h-full" src="${data.image_url}" alt="">
             </div>   
             <div class="col-span-8 grid grid-rows-3 m-3">
                 <div class="row-span-2">
                     <h3 class="text-2xl font-bold">${data.title}</h3>
-                    <p class="mt-3 text-ellipsis text-overflow-hidden" title="${data.details}">${data.details.slice(0,300)}...</p>
+                    <p class="mt-3">${data.details.slice(0,300)}...</p>
                 </div>
                 <div class="row-span-1  text-center flex justify-between items-center">
                     <div class="flex justify-between">
@@ -79,10 +79,10 @@ const modalData=datas=>{
     const modalOpen =document.getElementById('modal-open')
     modalOpen.innerHTML=`
     <img class="h-60 w-full rounded-lg" src="${datas.author.img}" alt="">
-    <h3 class="font-bold text-2xl mt-3">Name: ${datas.author.name? datas.author.name:'no data pound'}</h3>
-    <p class="py-1 font-semibold"> published date: ${datas.author.published_date}</p>
-    <p class="py-1 font-semibold"> published date: ${datas.rating.badge}</p>
-    <p class="py-1 font-semibold"> published date: ${datas.rating.number}</p>
+    <h3 class="font-bold text-2xl mt-3">Name: ${datas.author.name?datas.author.name:'no data pound'}</h3>
+    <p class="py-1 font-semibold"> published date: ${datas.author.published_date?datas.author.published_date:"no data pound"}</p>
+    <p class="py-1 font-semibold"> published date: ${datas.rating.badge?datas.rating.badge:"no data pound"}</p>
+    <p class="py-1 font-semibold"> published date: ${datas.rating.number?datas.rating.number:"no data pound"}</p>
     <div class="modal-action">
     <label for="my-modal" class="btn">close</label>
     </div>
