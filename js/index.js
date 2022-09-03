@@ -2,11 +2,11 @@ const newsFeedItem = ()=>{
     fetch(`https://openapi.programming-hero.com/api/news/categories`)
     .then(res=>res.json())
     .then(data=>allItmes(data.data.news_category))
+    .catch(error=>console.log(error))
 }
 const allItmes = datas =>{
     const items =document.getElementById('news-item')
     datas.forEach(data => {
-        console.log(data)
         const div = document.createElement('div')
         div.classList.add('text-lg')
         div.classList.add('font-bold')
@@ -27,15 +27,16 @@ const newsFeed =users=>{
     fetch(` https://openapi.programming-hero.com/api/news/category/${users}`)
     .then(res=>res.json())
     .then(data=>newsFeedShow(data.data))
+    .catch(error=>console.log(error))
 }
 const newsFeedShow = datas =>{
+    spiner(true)
     const length = datas.length
     const lengthItem = document.getElementById('length-item')
     lengthItem.innerText = length
     const newsSection =document.getElementById('news')
     newsSection.textContent = ''
     datas.forEach(data=>{
-        console.log(data)
         const div =document.createElement('div')
         div.innerHTML=`
         <div class="grid md:grid-cols-12 grid-cols-1 mb-6 border md:p-0 sm:p-10 h-full bg-slate-100">
@@ -51,11 +52,11 @@ const newsFeedShow = datas =>{
                     <div class="flex justify-between">
                         <img class="w-10 mr-4 rounded-full " src="${data.author.img}" alt="">
                         <div class="text-left">
-                            <h5 class="font-semibold">${data.author.name? data.author.name:"no data pound"}</h5>
-                            <p>${data.author?data.author.published_date:"no data pound"}</p>
+                            <h5 class="font-semibold">${data.author.name? data.author.name:"no data found"}</h5>
+                            <p>${data.author?data.author.published_date:"no data found"}</p>
                         </div>
                     </div>
-                    <div class="col-span-3 "> <i class="fa-solid fa-eye"></i> ${data.total_view?data.total_view:'no data pound '}</div>
+                    <div class="col-span-3 "> <i class="fa-solid fa-eye"></i> ${data.total_view?data.total_view:'no data found '}</div>
                     <div class="col-span-3"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
                     <div class="col-span-3 mr-4">
                         <label onclick="modal('${data._id}')" for="my-modal" class=" btn modal-button">click</label>
@@ -78,10 +79,10 @@ const modalData=datas=>{
     const modalOpen =document.getElementById('modal-open')
     modalOpen.innerHTML=`
     <img class="h-60 w-full rounded-lg" src="${datas.author.img}" alt="">
-    <h3 class="font-bold text-2xl mt-3">Name: ${datas.author.name?datas.author.name:'no data pound'}</h3>
-    <p class="py-1 font-semibold"> published date: ${datas.author.published_date?datas.author.published_date:"no data pound"}</p>
-    <p class="py-1 font-semibold"> published date: ${datas.rating.badge?datas.rating.badge:"no data pound"}</p>
-    <p class="py-1 font-semibold"> published date: ${datas.rating.number?datas.rating.number:"no data pound"}</p>
+    <h3 class="font-bold text-2xl mt-3">Name: ${datas.author.name?datas.author.name:'no data found'}</h3>
+    <p class="py-1 font-semibold"> published date: ${datas.author.published_date?datas.author.published_date:"no data found"}</p>
+    <p class="py-1 font-semibold"> published date: ${datas.rating.badge?datas.rating.badge:"no data found"}</p>
+    <p class="py-1 font-semibold"> published date: ${datas.rating.number?datas.rating.number:"no data found"}</p>
     <div class="modal-action">
     <label for="my-modal" class="btn">close</label>
     </div>
@@ -95,5 +96,8 @@ const spiner =check=>{
     else{
         spinerData.classList.add('hidden')
     }
+}
+const ans=()=>{
+    window.location.href = "anser.html"
 }
 newsFeedItem()
