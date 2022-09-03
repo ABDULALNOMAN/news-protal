@@ -100,8 +100,9 @@ const spiner =check=>{
 document.getElementById('blog').addEventListener('click', function(){
     const blogId =document.getElementById('blogElement')
     const ul =document.createElement('ul')
+    ul.classList.add('mx-3')
     ul.innerHTML=`
-    <li>The difference is that with const you can only only assign a value to a variable
+    <li class="font-semibold">The difference is that with const you can only only assign a value to a variable
     once, but with let it allows you to reassign after it has been assigned and var declarations are globally scoped or function/locally scoped.</li>
     <li>forEach is used to execute the same code on every element in an array but does not change the array and it returns undefined.and map executes the same code on every element in an array and returns a new array with the updated elements.and filter  checks every element in an array to see if it meets a certain criteria and returns a new array with the elements that return truthy for the criteria. and find using compare its only one value return </li>
     <li>Template literals provide an easy way to interpolate variables and expressions into strings</li>
