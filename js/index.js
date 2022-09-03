@@ -28,7 +28,7 @@ const newsFeed =users=>{
     .then(res=>res.json())
     .then(data=>newsFeedShow(data.data))
 }
-const newsFeedShow =datas=>{
+const newsFeedShow = datas =>{
     const length = datas.length
     const lengthItem = document.getElementById('length-item')
     lengthItem.innerText = length
@@ -75,7 +75,6 @@ const modal = users=>{
     .catch(error=>console.log(error))
 }
 const modalData=datas=>{
-    console.log(datas)
     const modalOpen =document.getElementById('modal-open')
     modalOpen.innerHTML=`
     <img class="h-60 w-full rounded-lg" src="${datas.author.img}" alt="">
@@ -97,17 +96,4 @@ const spiner =check=>{
         spinerData.classList.add('hidden')
     }
 }
-document.getElementById('blog').addEventListener('click', function(){
-    const blogId =document.getElementById('blogElement')
-    const ol =document.createElement('ol')
-    ol.classList.add('mx-10')
-    ol.classList.add('list-disc')
-    ol.innerHTML=`
-    <li class="font-semibold">The difference is that with const you can only only assign a value to a variable
-    once, but with let it allows you to reassign after it has been assigned and var declarations are globally scoped or function/locally scoped.</li>
-    <li class="font-semibold">forEach is used to execute the same code on every element in an array but does not change the array and it returns undefined.and map executes the same code on every element in an array and returns a new array with the updated elements.and filter  checks every element in an array to see if it meets a certain criteria and returns a new array with the elements that return truthy for the criteria. and find using compare its only one value return </li>
-    <li class="font-semibold">Template literals provide an easy way to interpolate variables and expressions into strings</li>
-    `
-    blogId.appendChild(ol)
-})
 newsFeedItem()

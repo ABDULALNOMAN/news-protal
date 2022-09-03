@@ -5,15 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News portal</title>
+    <!-- dasyui link -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.24.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <!-- tailwind link -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body class="bg-slate-100 text-black container mx-auto h-full">
     <!---------------------
          nav bar section 
         ----------------------->
-    <nav class="bg-slate-100">
+    <nav class="bg-slate-100 border-b-2">
         <div class="navbar">
             <div class="flex-1">
               <a class="btn btn-ghost normal-case text-3xl font-bold text-blue-800">magazine</a>
@@ -21,7 +22,7 @@
             <div class="flex-none gap-2">
                 <ul class="p-2  flex">
                     <li class="mr-4"><a>news</a></li>
-                    <li id="blog"><a>blog</a></li>
+                    <li><a>blog</a></li>
                 </ul>
               <div class="dropdown dropdown-end">
                 <label tabindex="0" class="btn btn-ghost btn-circle avatar">
@@ -69,12 +70,6 @@
             main 
     ----------------------------->
     <main>
-        <!---------
-             blog data section 
-            ------------------>
-        <section id="blogElement">
-
-        </section>
          <!------------
             news section
         ---------------------->
@@ -96,14 +91,14 @@
     <!----------------
         footer 
     ------------------------>
-        <footer id="spinerItem" class="hidden pb-32 mt-28">
-            <!----------------- 
-                spinner 
-                --------------->
-            <span class=" relative left-1/2 flex h-3 w-3 text-center">
-                <span class="animate-ping absolute inline-flex h-10 w-10 rounded-full bg-cyan-900 opacity-75"></span>
-            </span>
-        </footer>
+    <footer id="spinerItem" class="hidden pb-32 mt-28">
+        <!----------------- 
+            spinner 
+        --------------->
+        <span class=" relative left-1/2 flex h-3 w-3 text-center">
+            <span class="animate-ping absolute inline-flex h-10 w-10 rounded-full bg-cyan-900 opacity-75"></span>
+        </span>
+    </footer>
 
 
 
