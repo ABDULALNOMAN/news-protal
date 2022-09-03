@@ -7,8 +7,13 @@
     <title>News portal</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.24.0/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
-<body class="bg-slate-100 text-black container mx-auto">
+<body class="bg-slate-100 text-black container mx-auto h-full">
+    <!---------------------
+         nav bar section 
+        ----------------------->
     <nav class="bg-slate-100">
         <div class="navbar">
             <div class="flex-1">
@@ -29,17 +34,25 @@
             </div>
         </div>
     </nav>
-    <img src="" alt="">
+    <!-------------------
+            header 
+    ---------------------------- -->
     <header>
-        <!-- all news heading show -->
-        <section id="news-item" class="flex justify-evenly items-center my-3 ">
-        </section>
+        <!--------------------- 
+            all news heading show 
+        ------------------------------->
+        <section id="news-item" class="flex justify-evenly lg:items-center   lg:flex-row flex-col  my-3 ">
 
-        <!-- news quantities show -->
+        </section>
+        <!-------------------------
+             news quantities show
+             ---------------------------------->
         <section class="border py-3 px-2 my-10 mx-4 bg-white">
             <h3 class="text-lg font-bold"><span id="length-item">0</span> items found for category Entertainment</h3>
         </section>
-
+        <!------------------------------
+            short by view section  
+        ---------------------------------------->
         <section class="flex justify-between items-center pb-5 mx-3">
             <div class="flex items-center">
                 <h5 class="text-lg font-semibold">Sort By View:</h5>
@@ -53,12 +66,18 @@
             </div>
         </section>
     </header>
+    <!------------------------
+            main 
+    ----------------------------->
     <main>
         <section id="news" class="">
               
         </section>
+        <!--------------------------
+            modal section 
+        ------------------------->
         <section>
-            <input type="checkbox" id="my-modal" class="modal-toggle " />
+            <input type="checkbox" id="my-modal" class="modal-toggle"/>
             <div class="modal">
             <div id="modal-open" class="modal-box">
 
@@ -66,11 +85,25 @@
             </div>
         </section>
     </main>
+    <!----------------
+        footer 
+    ------------------------>
+    <footer class="pb-16">
+        <!--------------------
+            spiner section 
+        ------------------------>
+        <div id="spinerItem" class="spinner-border d-none " role="status">
+            <span class="visually-hidden
+            ">Loading...</span>
+        </div>
+    </footer>
 
     <!-- js link-->
     <script src="./js/index.js"></script>
     <!-- fontawesome -->
     <script src="https://kit.fontawesome.com/39bccf9214.js" crossorigin="anonymous"></script>
+
 </body>
 </html>
+
 
